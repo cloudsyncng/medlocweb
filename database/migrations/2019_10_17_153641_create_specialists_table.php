@@ -15,6 +15,10 @@ class CreateSpecialistsTable extends Migration
     {
         Schema::create('specialists', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('first_name');
+            $table->string('mid-name');
+            $table->string('surname');
+            $table->foreign('specialisation_id')->references('id')->on('specialisations');
             $table->timestamps();
         });
     }
